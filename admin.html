@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Practica de CRUD</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Practica CRUD</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="admin.html">Administracion</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1 class="display-3 mt-5 text-center">Administrar Productos</h1>
+            <hr>
+            <form id="formProducto">
+                <div class="mb-3">
+                    <label for="codigo" class="form-label">Codigo</label>
+                    <input type="text" class="form-control" id="codigo" placeholder="1234">
+                  </div>
+                  <div class="mb-3">
+                    <label for="producto" class="form-label">Producto</label>
+                    <input type="text" class="form-control" id="producto" placeholder="Ingrese un producto"/>
+                    <div class="invalid-feedback">
+                      Debe ingresar al menos un caracter
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <textarea  id="descripcion" rows="3" class="form-control" placeholder="Agregue la descripcion de su producto"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cantidad" class="form-label">Cantidad</label>
+                    <input type="text" class="form-control" id="cantidad" placeholder="10"/>
+                  </div>
+                  <div class="mb-3">
+                    <label for="url" class="form-label">URL</label>
+                    <input type="text" class="form-control" id="url" placeholder="10">
+                  </div>
+                  <button class="btn btn-primary" type="submit">Guardar</button>
+            </form>
+            <div class="alert alert-primary my-2 d-none" role="alert" id="msjAlerta">
+              Debe completar todos los datos
+            </div>
+        </section>
+        <section class="my-5">
+          <button class="btn btn-primary" id="btnAgregar">Nuevo</button>
+          <button class="btn btn-secondary" id="btnDatosPrueba" disabled>
+            Cargar datos de prueba
+          </button>
+          <div class="table-responsive">
+            <table class="table my-5">
+              <thead>
+                <tr>
+                  <th scope="col">Cod.</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">URL</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tablaProductos">
+               
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+    </main>
+    <footer></footer>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>
